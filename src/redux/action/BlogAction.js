@@ -22,10 +22,10 @@ export const blogListData = blogdata => async dispatch => {
     }
 }
 
-export const ShopListDelete = (id) => async dispatch => {
+export const blogDelete = (id) => async dispatch => {
     try {
         dispatch({ type:DELETE_BLOG_DATA_REQUIEST })
-        const {data} = await axios.delete(`https://jsonplaceholder.typicode.com/posts/${id}`) 
+        const {data} = await axios.delete(`https://jsonplaceholder.typicode.com/posts/id`) 
         dispatch({ type: DELETE_BLOG_DATA_SUCCESS, payload:data})
     } catch (error) {
         dispatch({ type:DELETE_BLOG_DATA_FAIL, payload: error.message})
